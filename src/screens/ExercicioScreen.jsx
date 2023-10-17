@@ -7,6 +7,12 @@ export default function ExercicioScreen() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
+  const frasesAletorias = [
+    "Sou o melhor do mundo",
+    "Seja você o melhor de si mesmo",
+    "Uma janela é uma alma brisada",
+  ];
+
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
@@ -17,7 +23,10 @@ export default function ExercicioScreen() {
         <Modal.Header closeButton>
           <Modal.Title>Felicidade não se fecha</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Seja você quem for, seja feliz!</Modal.Body>
+
+        <Modal.Body>
+          {frasesAletorias[Math.floor(Math.random() * frasesAletorias.length)]}
+        </Modal.Body>
         <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Achei brega, fecha
